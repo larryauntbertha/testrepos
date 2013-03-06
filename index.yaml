@@ -12,7 +12,11 @@ indexes:
 
 # this is a test
 
+<<<<<<< HEAD
 ### added from master ###
+=======
+### added from 101 ###
+>>>>>>> origin/101
 
 - kind: Tasks
   properties:
