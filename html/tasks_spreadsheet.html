@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Aunt Bertha Assignment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <link type="text/css" href="/css/main.css" rel="stylesheet" />
+    <link type="text/css" href="/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" />
+    <link type="text/css" href="/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/jquery.tablesorter.js"></script>
+    <script src="/js/jquery.tablesorter.pager.js"></script>
+    <script type="text/javascript" id="js">
+    $(document).ready(function() {
+    	$("#myTable").tablesorter();
+    }); 
+    </script>
+  </head>
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Aunt Bertha Assignment</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="/">Home</a></li>
+              <li class="active"><a href="spreadsheet">Spreadsheet</a></li>
+              <li><a href="daily">Daily Statistics</a></li>
+              <li><a href="weekly">Weekly Totals</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="container"'>
+
+    <div class="row margin-top-60 text-aligned-center">
+        <h4>Tasks Completed - Spreadsheet</h4>
+
+        <table id="myTable" class="tablesorter"> 
+        <thead> 
+        <tr> 
+            <th>Worker</th> 
+            <th>Mon</th> 
+            <th>Tue</th> 
+            <th>Wed</th> 
+            <th>Thu</th> 
+            <th>Fri</th> 
+            <th>Total</th> 
+        </tr> 
+        </thead> 
+        <tbody> 
+        {% for rawworker in rawworkers %}
+            <tr>
+                <td><b>{{ rawworker.firstname }}</b></td>
+                {% for rawtask in rawtasks %}
+                    {% if rawtask.worker_id == rawworker.id %}
+                        <td>{{ rawtask.tasks_completed }}</td>
+                    {% endif %}
+                {% endfor %}
+                {% if rawworker.id == 1 %}
+                    <td>{{ tasks1ttl }}</td>
+                {% elif rawworker.id == 2 %}
+                    <td>{{ tasks2ttl }}</td>
+                {% elif rawworker.id == 3 %}
+                    <td>{{ tasks3ttl }}</td>
+                {% elif rawworker.id == 4 %}
+                    <td>{{ tasks4ttl }}</td>
+                {% elif rawworker.id == 5 %}
+                    <td>{{ tasks5ttl }}</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody> 
+        </table> 
+
+    </div>
+
+</div>
+
+
+    <script src="/bootstrap/docs/assets/js/bootstrap-transition.js"></script>
+    <script src="/bootstrap/docs/assets/js/bootstrap-alert.js"></script>
+    <script src="/bootstrap/docs/assets/js/bootstrap-modal.js"></script>
+    <script src="/bootstrap/docs/assets/js/bootstrap-dropdown.js"></script>
+    <script src="/bootstrap/docs/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="/bootstrap/docs/assets/js/bootstrap-tab.js"></script>
+    <script src="/bootstrap/docs/assets/js/bootstrap-tooltip.js"></script>
+    <script src="/bootstrap/docs/assets/js/bootstrap-popover.js"></script>
+    <script src="/bootstrap/docs/assets/js/bootstrap-button.js"></script>
+    <script src="/bootstrap/docs/assets/js/bootstrap-collapse.js"></script>
+    <script src="/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
+    <script src="/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>
