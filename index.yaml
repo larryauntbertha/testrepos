@@ -20,4 +20,5 @@ indexes:
 - kind: zTasks
   properties:
   - name: worker_id
+### added from master ###
   - name: weekday_id
