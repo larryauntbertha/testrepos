@@ -15,6 +15,7 @@ indexes:
 - kind: Tasks
   properties:
   - name: worker_id
+### added from 101 ###
   - name: weekday_id
 
 - kind: zTasks
