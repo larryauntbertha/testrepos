@@ -1,1 +1,0 @@
-Visit js/main.js, and refer to the comments for 4 homework assignments.
