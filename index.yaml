@@ -12,6 +12,8 @@ indexes:
 
 # this is a test
 
+### added from master ###
+
 - kind: Tasks
   properties:
   - name: worker_id
