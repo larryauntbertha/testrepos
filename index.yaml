@@ -23,3 +23,5 @@ indexes:
   - name: worker_id
 ### added from master ###
   - name: weekday_id
+
+### added from 102 ###
